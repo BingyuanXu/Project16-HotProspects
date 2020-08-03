@@ -8,39 +8,37 @@
 
 import SwiftUI
 
-class User: ObservableObject {
-  @Published var name = "Taylor Swift"
-}
-
 struct ContentView: View {
-  let user = User()   //must have , if not, will crash
-    var body: some View {
-      VStack {
-        EditView()
-        DisplayView()
+  @State private var selectedTab = 0
+  var body: some View {
+    TabView(selection: $selectedTab) {
+      Text("View 1")
+        .onTapGesture {
+          self.selectedTab = 1
       }
-      .environmentObject(user)
+      .tabItem {
+        Image(systemName: "star")
+        Text("tab 1")
+      }
+      .tag(0)
+      
+      Text("View 2")
+        .onTapGesture {
+          self.selectedTab = 0
+      }
+        .tabItem {
+          Image(systemName: "star.fill")
+          Text("tab 2")
+      }
+      .tag(1)
+    }
   }
 }
 
-struct EditView: View {
-    @EnvironmentObject var user: User
 
-    var body: some View {
-        TextField("Name", text: $user.name)
-    }
-}
-
-struct DisplayView: View {
-    @EnvironmentObject var user: User
-
-    var body: some View {
-        Text(user.name)
-    }
-}
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
