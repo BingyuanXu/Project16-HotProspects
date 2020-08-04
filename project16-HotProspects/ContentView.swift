@@ -20,9 +20,11 @@ struct ContentView: View {
         .padding()
         .contextMenu {
           Button(action: {
-            self.backgroundColor = .red
+              self.backgroundColor = .red
           }) {
-            Text("Red")
+              Text("Red")
+              Image(systemName: "checkmark.circle.fill")
+                  .foregroundColor(.red)
           }
           
           Button(action: {
