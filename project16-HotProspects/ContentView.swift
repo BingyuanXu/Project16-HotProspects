@@ -9,14 +9,35 @@
 import SwiftUI
 
 struct ContentView: View {
+  @State private var backgroundColor = Color.black
   var body: some View {
-    Image("example")
-      .interpolation(.none)
-      .resizable()
-      .scaledToFit()
-      .frame(maxHeight:.infinity)
-      .background(Color.black)
-      .edgesIgnoringSafeArea(.all)
+    VStack {
+      Text("Hello World")
+        .padding()
+        .background(backgroundColor)
+      
+      Text("Change background color")
+        .padding()
+        .contextMenu {
+          Button(action: {
+            self.backgroundColor = .red
+          }) {
+            Text("Red")
+          }
+          
+          Button(action: {
+            self.backgroundColor = .green
+          }) {
+            Text("Green")
+          }
+          
+          Button(action: {
+            self.backgroundColor = Color.blue
+          }) {
+            Text("Blue")
+          }
+      }
+    }
   }
 }
 
