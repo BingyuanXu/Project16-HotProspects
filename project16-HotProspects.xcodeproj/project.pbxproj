@@ -16,6 +16,7 @@
 		631AE9B224D6679C00B3C03C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631AE9B024D6679C00B3C03C /* LaunchScreen.storyboard */; };
 		63B3DD2324D9E6C600226169 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B3DD2224D9E6C600226169 /* ProspectsView.swift */; };
 		63B3DD2524D9E6D200226169 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B3DD2424D9E6D200226169 /* MeView.swift */; };
+		63B3DD2724D9ED5600226169 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B3DD2624D9ED5600226169 /* Prospect.swift */; };
 		63FD3A3E24D94A1800925691 /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 63FD3A3D24D94A1800925691 /* SamplePackage */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		631AE9B324D6679C00B3C03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63B3DD2224D9E6C600226169 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		63B3DD2424D9E6D200226169 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		63B3DD2624D9ED5600226169 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				631AE9A224D6679B00B3C03C /* AppDelegate.swift */,
 				631AE9A424D6679B00B3C03C /* SceneDelegate.swift */,
 				631AE9A924D6679B00B3C03C /* ContentView.swift */,
+				63B3DD2624D9ED5600226169 /* Prospect.swift */,
 				63B3DD2224D9E6C600226169 /* ProspectsView.swift */,
 				63B3DD2424D9E6D200226169 /* MeView.swift */,
 				631AE9AB24D6679C00B3C03C /* Assets.xcassets */,
@@ -166,6 +169,7 @@
 				63B3DD2524D9E6D200226169 /* MeView.swift in Sources */,
 				631AE9A324D6679B00B3C03C /* AppDelegate.swift in Sources */,
 				631AE9A524D6679B00B3C03C /* SceneDelegate.swift in Sources */,
+				63B3DD2724D9ED5600226169 /* Prospect.swift in Sources */,
 				63B3DD2324D9E6C600226169 /* ProspectsView.swift in Sources */,
 				631AE9AA24D6679B00B3C03C /* ContentView.swift in Sources */,
 				631AE9A824D6679B00B3C03C /* project16_HotProspects.xcdatamodeld in Sources */,
