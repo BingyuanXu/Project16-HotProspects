@@ -7,23 +7,41 @@
 //
 
 import SwiftUI
-import SamplePackage
 
 struct ContentView: View {
-  let possibleNumber = Array(1...60)
-  var results: String {
-    let numbers = possibleNumber.random(7).sorted()
-    let strings = numbers.map(String.init)
-    return strings.joined(separator: ",")
-  }
+  
   var body: some View {
-    Text(results)
+    TabView {
+      ProspectsView(filter: .none)
+        .tabItem {
+          Image(systemName: "person.3")
+          Text("Everyone")
+      }
+      
+      ProspectsView(filter: .contacted)
+        .tabItem {
+          Image(systemName: "checkmark.circle")
+          Text("Contacted")
+      }
+      
+      ProspectsView(filter: .uncontacted)
+        .tabItem {
+          Image(systemName: "questionmark.diamond")
+          Text("Uncontacted")
+      }
+      
+      MeView()
+        .tabItem {
+          Image(systemName: "person.crop.square")
+          Text("Me")
+      }
+    }
   }
 }
 
 
-
 struct ContentView_Previews: PreviewProvider {
+  
   static var previews: some View {
     ContentView()
   }
