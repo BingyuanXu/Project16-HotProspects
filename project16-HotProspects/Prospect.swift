@@ -12,13 +12,32 @@ class Prospect: Identifiable, Codable {
   let id = UUID()
   var name = "Anonymous"
   var emailAddress = ""
-  var isContacted = false
+  fileprivate(set) var isContacted = false
 }
 
 class Prospects: ObservableObject {
-  @Published var people: [Prospect]  
+  @Published var people: [Prospect]
+  
+  func toggle(_ prospect: Prospect) {
+    objectWillChange.send()
+    prospect.isContacted.toggle()
+    save()
+  }
+  
+  func save() {
+    if let data = try? JSONEncoder().encode(people) {
+      UserDefaults.standard.set(data, forKey: "SavedData")
+    }
+  }
   
   init() {
+    if let items = UserDefaults.standard.data(forKey: "SavedData") {
+      let decoder = JSONDecoder()
+      if let decoded = try? decoder.decode([Prospect].self, from: items) {
+        self.people = decoded
+        return
+      }
+    }
     self.people = []
   }
 }
