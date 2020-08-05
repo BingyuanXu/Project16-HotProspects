@@ -13,11 +13,11 @@ struct MeView: View {
   
   @State private var name = "Anonymous"
   @State private var emailAddress = "you@yoursite.com"
-  
   let context = CIContext()
   let filter = CIFilter.qrCodeGenerator()
   
   func generateQRCode(from string: String) -> UIImage {
+    
     let data = Data(string.utf8)
     filter.setValue(data, forKey: "inputMessage")
     
@@ -36,10 +36,12 @@ struct MeView: View {
         TextField("Name", text: $name)
           .textContentType(.name)
           .font(.title)
+          .keyboardType(.namePhonePad)
           .padding(.horizontal)
         
         TextField("Email address", text: $emailAddress)
           .textContentType(.emailAddress)
+          .keyboardType(.emailAddress)
           .font(.title)
           .padding([.horizontal, .bottom])
         
@@ -50,6 +52,8 @@ struct MeView: View {
           .resizable()
           .scaledToFit()
           .frame(width: 200, height: 200)
+        
+        Spacer()
       }
       .navigationBarTitle("Your code")
     }
