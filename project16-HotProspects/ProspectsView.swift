@@ -27,7 +27,6 @@ struct ProspectsView: View {
     }
   }
   
-  
   let filter: FilterType
   
   var title: String {
